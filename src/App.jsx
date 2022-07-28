@@ -2,7 +2,9 @@ import React, { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LoadingSpinner } from "./components/LoadingSpinner";
 import { Navigation } from "./components/Navigation";
+import { BrowserView, MobileView } from "react-device-detect";
 import Home from "./pages/Home";
+import HamburgerMenu from "./components/HamburgerMenu";
 
 export default function App() {
   const Contact = React.lazy(() => import("./pages/Contact"));
@@ -40,7 +42,14 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Navigation pages={pages} />
+      <BrowserView>
+        <Navigation pages={pages} />
+      </BrowserView>
+
+      <MobileView>
+        <HamburgerMenu pages={pages} />
+      </MobileView>
+
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
           {pages.map((page, index) => (

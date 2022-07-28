@@ -1,0 +1,46 @@
+.hb-btn {
+  position: absolute;
+  top: 5vw;
+  left: 5vw;
+  height: 15vw;
+  width: 15vw;
+  padding: 1.8vw;
+  background-color: var(--main-bg-color);
+  border-radius: 50%;
+}
+
+.hb-btn svg {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.hb-menu {
+  position: absolute;
+  padding: 10vw;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+  background-color: var(--main-bg-color);
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  transition: left 1s;
+}
+
+.hb-menu * {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.hb-menu h1 {
+  font-size: 44pt;
+}
+
+.hb-menu a {
+  font-size: 24pt;
+}
